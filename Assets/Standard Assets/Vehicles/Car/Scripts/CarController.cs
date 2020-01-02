@@ -126,6 +126,11 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
 
+        private void FixedUpdate()
+        {
+            m_Rigidbody.AddForce(Vector3.up * 100000 * (Input.GetKey(KeyCode.Q) ? 1: 0));
+        }
+
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
             for (int i = 0; i < 4; i++)
